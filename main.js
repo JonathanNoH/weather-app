@@ -42,13 +42,19 @@ const updateLocationDom = function(locationObj) {
   countryDom.innerText = locationObj.country;
 }
 
+const toCFromK = function(num) {
+  return +(num - 273.15).toFixed(1);
+}
+
 const updateWeatherDom = function(weatherObj) {
   if (typeof currentWeatherObj === 'undefined') return;
   currentConditionsDom.innerText = weatherObj.weather[0].description;
-  tempDom.innerText = weatherObj.main.temp;
-  feelsLikeDom.innerText = weatherObj.main['feels_like'];
-  tempMinDom.innerText = weatherObj.main['temp_min'];
-  tempMaxDom.innerText = weatherObj.main['temp_max'];
+  //Kelvin nums
+  tempDom.innerText = toCFromK(weatherObj.main.temp);
+  feelsLikeDom.innerText = toCFromK(weatherObj.main['feels_like']);
+  tempMinDom.innerText = toCFromK(weatherObj.main['temp_min']);
+  tempMaxDom.innerText = toCFromK(weatherObj.main['temp_max']);
+  //End Kelvin nums
   pressureDom.innerText = weatherObj.main.pressure;
   humidityDom.innerText = weatherObj.main.humidity;
   windDom.innerText = weatherObj.wind.speed;
