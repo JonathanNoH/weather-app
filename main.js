@@ -44,7 +44,7 @@ const updateLocationDom = function(locationObj) {
 
 const updateWeatherDom = function(weatherObj) {
   if (typeof currentWeatherObj === 'undefined') return;
-  //currentConditionsDom.innerText = weatherObj.weather[0].description;
+  currentConditionsDom.innerText = weatherObj.weather[0].description;
   tempDom.innerText = weatherObj.main.temp;
   feelsLikeDom.innerText = weatherObj.main['feels_like'];
   tempMinDom.innerText = weatherObj.main['temp_min'];
