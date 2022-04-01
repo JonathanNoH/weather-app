@@ -50,14 +50,14 @@ const updateWeatherDom = function(weatherObj) {
   if (typeof currentWeatherObj === 'undefined') return;
   currentConditionsDom.innerText = weatherObj.weather[0].description;
   //Kelvin nums
-  tempDom.innerText = toCFromK(weatherObj.main.temp);
-  feelsLikeDom.innerText = toCFromK(weatherObj.main['feels_like']);
-  tempMinDom.innerText = toCFromK(weatherObj.main['temp_min']);
-  tempMaxDom.innerText = toCFromK(weatherObj.main['temp_max']);
+  tempDom.innerText = `${toCFromK(weatherObj.main.temp)}°C`;
+  feelsLikeDom.innerText = `${toCFromK(weatherObj.main['feels_like'])}°C`;
+  tempMinDom.innerText = `${toCFromK(weatherObj.main['temp_min'])}°C`;
+  tempMaxDom.innerText = `${toCFromK(weatherObj.main['temp_max'])}°C`;
   //End Kelvin nums
   pressureDom.innerText = weatherObj.main.pressure;
-  humidityDom.innerText = weatherObj.main.humidity;
-  windDom.innerText = weatherObj.wind.speed;
+  humidityDom.innerText = `${weatherObj.main.humidity}%`;
+  windDom.innerText = `${weatherObj.wind.speed} km/h`;
 }
 //form DOM
 const form = document.querySelector('form');
