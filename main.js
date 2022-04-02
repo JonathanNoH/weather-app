@@ -55,7 +55,6 @@ const updateWeatherDom = function(weatherObj) {
   tempMinDom.innerText = `${toCFromK(weatherObj.main['temp_min'])}°C`;
   tempMaxDom.innerText = `${toCFromK(weatherObj.main['temp_max'])}°C`;
   //End Kelvin nums
-  pressureDom.innerText = weatherObj.main.pressure;
   humidityDom.innerText = `${weatherObj.main.humidity}%`;
   windDom.innerText = `${weatherObj.wind.speed} km/h`;
 }
