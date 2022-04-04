@@ -9,17 +9,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form action="">
-    <label for="fLocation">Enter a Location: </label>
-    <input type="text" name="fLocation" id="fLocation">
-    <button type="submit">Submit</button>
-  </form>
-  <div>
-    <div class="location-name">Place: <span class="city"></span><span class="country"></span></div>
-    <div class="conditions">
-      Current Conditions: <span class="conditions"></span>
+  <header>
+    <h1>Weather App</h1>
+    <div class="form-container">
+      <form action="">
+        <input type="text" name="fLocation" id="fLocation">
+        <label for="fLocation">Enter a Location: </label>
+        <button type="submit">
+          <img src="/search_white_24dp.svg" alt="Search">
+        </button>
+      </form>
     </div>
-    <div class="main">
+  </header>
+  <div class="main">
+    <div class="content">
+      <div class="location-name">Place: <span class="city"></span><span class="country"></span></div>
+      <div class="conditions">
+        Current Conditions: <span class="conditions"></span>
+      </div>
       <div class="temp">Current Temperature: <span class="temp"></span></div>
       <div class="feels-like">Feels like: <span class="feels-like"></span></div>
       <div class="temp-min">Minimum Temperature: <span class="temp-min"></span></div>
@@ -27,6 +34,9 @@
       <div class="humidity">Humidity: <span class="humidity"></span></div>
       <div class="wind">Wind: <span class="wind"></span></div>
     </div>
+  </div>
+  <div class="footer">
+    <div>Powered by OpenWeather API</div>
   </div>
 </body>
 </html>

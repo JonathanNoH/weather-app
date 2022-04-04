@@ -87,3 +87,15 @@ const submitHandler = function(event) {
 }
 
 form.addEventListener('submit', submitHandler);
+
+// form pretty label hiding
+
+const label = document.querySelector('label');
+const checkLabelHidden = function() {
+  if (locationInput.value === null || locationInput.value === "") {
+    label.classList.remove('hidden');
+  } else {
+    label.classList.add('hidden');
+  }
+}
+locationInput.addEventListener('input', checkLabelHidden);

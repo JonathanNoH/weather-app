@@ -1,0 +1,158 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* END RESET */
+
+:root {
+  --main-color: #5CC9FF;
+  --white: #EBFEFF;
+  --black: #0E0A1F;
+  --accent-color: #EF7557;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  color: var(--black);
+  background-color: var(--white);
+}
+
+header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  background-color: var(--main-color);
+  box-shadow: 0 3px 8px grey;
+}
+
+.form-container {
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  position: relative;
+}
+
+form > label {
+  position: absolute;
+  opacity: 0.3;
+  left: 0.5rem;
+}
+
+form > input:focus + label {
+  opacity: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+button {
+  border-style: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(35ch, 1fr));
+}
+
+.footer {
+  align-self: center;
+  margin-top: auto;
+  padding: 1rem;
+}
